@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../static/home.css">
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<title>Healthcare Website</title>
+		
+
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="/">Healthcare</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/details">Details <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/Hospital">Hospital search <span class="sr-only">(current)</span></a>
+	      </li>
+	    </ul>
+	    <span class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Check Disease
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          <a class="dropdown-item" href="/predict">Pneumonia</a>
+	          <a class="dropdown-item" href="/diabetes">Diabetes</a>
+	          <a class="dropdown-item" href="/heart">Heart</a>
+	          <a class="dropdown-item" href="/liver">Liver</a>
+	          <a class="dropdown-item" href="/malaria">Malaria</a>
+	        </div>
+	      </span>
+	  </div>
+	</nav>
+
+
+	{% block content %}
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+		  <h1 class="display-4 header font-weight-bold">Healthcare Center</h1>
+		  <img src="../static\doctor.jpeg" id="center" alt="Responsive image">
+		  <br/>
+		  <p class="lead font-weight-normal">This is an online Healthcare center. Here you can check for yourself if you have a disease or not and save the expensive and time consuming trip to the Doctors. If found in risk of having a disease, you will also be provided with information about its symptoms and preventions. You can also check for the list of hospitals and their point of contact in your city.</p>
+		 
+		</div>
+	  </div>
+	 
+	{% endblock %}
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+	<script src="{{ url_for('static', filename='js/malaria.js') }}" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).on('change', '.custom-file-input', function (event) {
+	    $(this).next('.custom-file-label').html(event.target.files[0].name);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "home.html" %}
+
+{% block content %}
+	<h1 class="header">Enter the details here to check diabetes:</h1>
+	<img src="../static\diabetes.jpeg" id="center" style="width:20%;" alt="Responsive image">
+
+	<form action="{{url_for('diabetes')}}" method="post" style="margin-left: 120px;margin-right: 120px;margin-top: 20px;margin-bottom: 20px;">
+	    <div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="Number of Pregnancies" name="preg" required>
+		    </div>
+		    <div class="col">
+		      	<input type="text" class="form-control" placeholder="Glucose Concentration" name="glucose" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="Blood Pressure (in mm Hg)" name="bp" required>
+		    </div>
+		    <div class="col">
+		      	<input type="text" class="form-control" placeholder="Skin Thickness (in mm)" name="st" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="Insulin (in mu U/ml)" name="ins" required>
+		    </div>
+		    <div class="col">
+		      	<input type="text" class="form-control" placeholder="Body Mass Index (in kg/m*m)" name="bmi" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="Diabetes Pedigree Function" name="dpf" required>
+		    </div>
+		    <div class="col">
+		      	<input type="text" class="form-control" placeholder="Age (in years)" name="age" required>
+		    </div>
+		</div>
+		<p></p>
+	  	<button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>	
+	</form>
+
+	<h3 class="header">{{ result }}</h4>
+	<br><br><br>
+
+{% endblock %}

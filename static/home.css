@@ -1,0 +1,27 @@
+html{
+	background-color: #fff;
+}
+
+
+#navbarDropdownMenuLink{
+	color: white;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header{
+	text-align: center;
+}
+
+

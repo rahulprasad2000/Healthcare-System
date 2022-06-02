@@ -1,0 +1,61 @@
+{% extends "home.html" %}
+
+{% block content %}
+	
+	<h1 class="header">Enter the details here for liver disease:</h1>
+
+	<img src="../static\liver.jpeg" id="center" style="width:20%;" alt="Responsive image">
+
+	<form action="{{url_for('liver')}}" method="post" style="margin-left: 120px;margin-right: 120px;margin-top: 20px;margin-bottom: 20px;">
+		<div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="Age in years" name="age" required>
+		    </div>
+		    <div class="col">
+		      	<select class="form-control" name="sex" required>
+		      		<option value="" disabled selected>Choose Sex</option>
+			     	<option value="0">Female</option>
+			     	<option value="1">Male</option>
+			    </select>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="Total Billirubin in mg/dL" name="tb" required>
+		    </div>
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="Conjugated Billirubin in mg/dL" name="db" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="Alkaline Phosphotase in IU/L" name="ap" required>
+		    </div>
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="Alamine Aminotransferase in IU/L" name="alt" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="Aspartate Aminotransferase in IU/L" name="ast" required>
+		    </div>
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="Total Proteins in g/dL" name="tp" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="Albumin in g/dL" name="alb" required>
+		    </div>
+		    <div class="col">
+		     	<input type="text" class="form-control" placeholder="A/G ratio" name="ag" required>
+		    </div>
+		</div>
+		<p></p>
+	  	<button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+	</form>
+
+	<h3 class="header">{{ result }}</h4>
+	<br><br><br>
+
+{% endblock %}

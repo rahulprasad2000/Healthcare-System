@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+	<h1 class="header">Enter the city name to get the hospital details:</h1>
+
+	<img src="../static\hospital.jpeg" id="center"  style="width:20%;" alt="Responsive image">
+
+	<form action="{{url_for('hospital')}}" method="post" style="margin-left: 120px;margin-right: 120px;margin-top: 20px;margin-bottom: 20px;">
+	    <div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="City name" name="name" required>
+		    </div>
+		        
+		</div>
+		<p></p>
+	  	<button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>	
+	</form>
+
+	<div class=page>
+  	<h1 style="text-align: center;">Hospital detail</h1>
+	  <hr size="20%" width="50%" color="green">
+  	{% for table in tables %}
+    <h2>{{[loop.index]}}</h2>
+    {{ table|safe }}
+    {% endfor %}
+	</div>
+	<h3 class="header">{{ result }}</h4>
+	<br><br><br>
+
+
+
+	<br><br><br>
+
+{% endblock %}

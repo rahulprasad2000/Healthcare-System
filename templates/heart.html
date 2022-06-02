@@ -1,0 +1,99 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+	<h1 class="header">Enter the details here to check heart disease:</h1>
+
+	<img src="../static\heart.jpeg" id="center"  style="width:20%;" alt="Responsive image">
+
+	<form action="{{url_for('heart')}}" method="post" style="margin-left: 120px;margin-right: 120px;margin-top: 20px;margin-bottom: 20px;">
+	    <div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="Age in years" name="age" required>
+		    </div>
+		    <div class="col">
+		      	<select class="form-control" name="sex" required>
+		      		<option value="" disabled selected>Choose Sex</option>
+			     	<option value="0">Female</option>
+			     	<option value="1">Male</option>
+			    </select>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<select class="form-control" name="cp" required>
+		      		<option value="" disabled selected>Chest Pain Type</option>
+			     	<option value="0">0</option>
+			     	<option value="1">1</option>
+			     	<option value="2">2</option>
+			     	<option value="3">3</option>
+			    </select>
+		    </div>
+		    <div class="col">
+		      	<input type="text" class="form-control" placeholder="Resting Blood Pressure (in mm Hg)" name="trestbps" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="Serum Cholestoral (in mg/dl)" name="chol" required>
+		    </div>
+		    <div class="col">
+		      	<select class="form-control" name="fbs" required>
+		      		<option value="" disabled selected>Is fasting blood sugar is greater than 120 mg/dl ?</option>
+			     	<option value="0">False</option>
+			     	<option value="1">True</option>
+			    </select>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<select class="form-control" name="restecg" required>
+		      		<option value="" disabled selected>Resting electrocardiographic results</option>
+			     	<option value="0">0</option>
+			     	<option value="1">1</option>
+			     	<option value="2">2</option>
+			    </select>
+		    </div>
+		    <div class="col">
+		      	<input type="text" class="form-control" placeholder="Maximum heart rate achieved" name="thalach" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<select class="form-control" name="exang" required>
+		      		<option value="" disabled selected>Exercise induced angina</option>
+			     	<option value="0">No</option>
+			     	<option value="1">Yes</option>
+			    </select>
+		    </div>
+		    <div class="col">
+		      	<input type="text" class="form-control" placeholder="ST depression induced by exercise relative to rest" name="oldpeak" required>
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="col">
+		    	<input type="text" class="form-control" placeholder="the slope of peak exercise ST segment" name="slope" required>
+		    </div>
+		    <div class="col">
+		      	<select class="form-control" name="ca" required>
+		      		<option value="" disabled selected>number of major vessels colored by flourosopy</option>
+			     	<option value="0">0</option>
+			     	<option value="1">1</option>
+			     	<option value="2">2</option>
+			     	<option value="3">3</option>
+			    </select>
+		    </div>
+		</div>
+		<div class="form-row">
+			<div class="col">
+		  		<input type="text" class="form-control" placeholder="thal" name="thal" required>
+		  	</div>    
+		</div>
+		<p></p>
+	  	<button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>	
+	</form>
+
+	<h3 class="header">{{ result }}</h4>
+	<br><br><br>
+
+{% endblock %}
